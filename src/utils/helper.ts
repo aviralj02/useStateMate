@@ -1,11 +1,3 @@
-const typeMap: Record<string, string> = {
-  string: '""',
-  number: "0",
-  boolean: "false",
-  array: "[]",
-  object: "{}",
-};
-
 export function inferType(value: string): string {
   if (!isNaN(Number(value))) return "number";
 

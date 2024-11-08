@@ -1,71 +1,34 @@
-# useStateMate README
+# 🪄 useStateMate: useState Helper
 
-This is the README for your extension "usestatemate". After writing up a brief description, we recommend including the following sections.
+Easily transform selected text into a `useState` hook in JavaScript/TypeScript and get autocompletions for the setter function! This extension streamlines React state management by suggesting setter function names as you type and by helping you quickly create useState hooks with inferred types from selected text
 
-## Features
+## ✨ Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Auto-Suggest Setter Function for `useState`
 
-For example if there is an image subfolder under your extension project workspace:
+- Start typing a useState declaration, and when you enter const [stateVariable, , the extension will suggest an autocompletion for the setter function name.
+- Works for JavaScript and TypeScript files, including `.js`, `.jsx`, `.ts`, and `.tsx`.
 
-\!\[feature X\]\(images/feature-x.png\)
+### Convert Selected Text to `useState` Hook with Inferred Type
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Select any text, press `CTRL + SHIFT + P` , and choose **"Add useState With Types"**.
+- Enter a name for your state variable, and the extension will auto-generate a `useState` hook with an inferred type based on the selected text.
 
-## Requirements
+## 🚀 Usage
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Auto-Suggest Setter Function for `useState`
 
-## Extension Settings
+![autocomplete-usage](./media/usage1.gif)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### Convert Selected Text to `useState` Hook with Inferred Type
 
-For example:
+![infer-type-usage](./media/usage2.gif)
 
-This extension contributes the following settings:
+## 🔧 Requirements
 
-- `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something.
+- Works with JavaScript/TypeScript in files with extensions `.js`, `.jsx`, `.ts`, and `.tsx`.
+- No additional setup needed after installation.
 
-## Known Issues
+## 👤 Author
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-- [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-- Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-- Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Authored and maintained by [aviralj02](https://aviral.xyz).

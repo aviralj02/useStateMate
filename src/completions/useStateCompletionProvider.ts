@@ -11,7 +11,7 @@ export class useStateCompletionProvider
       .lineAt(position)
       .text.substring(0, position.character);
 
-    const match = linePrefix.match(/const \[([a-zA-Z0-9_$]+),\s*$/);
+    const match = linePrefix.match(/const\s*\[([a-zA-Z0-9_$]+),\s*$/);
     if (!match) {
       return undefined;
     }
