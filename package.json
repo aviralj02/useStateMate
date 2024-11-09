@@ -1,7 +1,7 @@
 {
   "name": "usestatemate",
   "displayName": "useStateMate",
-  "description": "",
+  "description": "Simplify React state management with useState setter suggestions and auto-generation.",
   "version": "0.0.4",
   "publisher": "aviralj02",
   "icon": "./media/usestatemate-icon.png",
