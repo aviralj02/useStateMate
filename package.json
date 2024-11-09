@@ -2,8 +2,9 @@
   "name": "usestatemate",
   "displayName": "useStateMate",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "aviralj02",
+  "icon": "./media/usestatemate-icon.png",
   "engines": {
     "vscode": "^1.95.0"
   },
