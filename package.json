@@ -3,11 +3,29 @@
   "displayName": "useStateMate",
   "description": "",
   "version": "0.0.1",
+  "publisher": "aviralj02",
   "engines": {
     "vscode": "^1.95.0"
   },
+  "author": {
+    "name": "aviral"
+  },
   "categories": [
     "Other"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "usestatemate",
+    "helper",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "react",
+    "js",
+    "jsx",
+    "ts",
+    "tsx"
   ],
   "activationEvents": [
     "onLanguage:typescript",
