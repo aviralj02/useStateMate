@@ -4,6 +4,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4] - 2024-11-10
+
+### Updated
+
+- Updated extension icon to 128 x 128.
+
 ## [0.0.3] - 2024-11-09
 
 ### Added
