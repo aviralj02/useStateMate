@@ -4,6 +4,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.0] - 2024-11-11
+
+### New Features
+
+- Backspace Suggestion Support: The extension now shows setter name suggestions if the user deletes back to the comma and space ensuring suggestion appears even after corrections.
+
+### Improvements
+
+- Enhanced Regex Matching: Expanded regex pattern matching to account for various styles and spacing formats.
+- Improved suggestion prompt by adding additional trigger characters
+
 ## [0.0.4] - 2024-11-10
 
 ### Updated

@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { stateRegexPatterns } from "../utils/helper";
 
 export class useStateCompletionProvider
   implements vscode.CompletionItemProvider
@@ -11,12 +12,18 @@ export class useStateCompletionProvider
       .lineAt(position)
       .text.substring(0, position.character);
 
-    const match = linePrefix.match(/const\s*\[([a-zA-Z0-9_$]+),\s*$/);
-    if (!match) {
+    let stateName;
+    for (const regex of stateRegexPatterns) {
+      const match = linePrefix.match(regex!);
+      if (match) {
+        stateName = match[1];
+        break;
+      }
+    }
+    if (!stateName) {
       return undefined;
     }
 
-    const stateName = match[1];
     const setterName = `set${
       stateName.charAt(0).toUpperCase() + stateName.slice(1)
     }`;
@@ -27,7 +34,38 @@ export class useStateCompletionProvider
     );
     completionItem.detail = "useState setter function";
     completionItem.insertText = setterName;
+    completionItem.documentation = new vscode.MarkdownString(
+      `Automatically suggests the setter function for \`${stateName}\` defined with \`useState\`.`
+    );
 
     return [completionItem];
+  }
+
+  handleBackspaceEvent(event: vscode.TextDocumentChangeEvent) {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor || event.document !== editor.document) return;
+
+    const change = event.contentChanges[0];
+    if (!change) return;
+
+    if (change.text === "") {
+      const position = change.range.start;
+      const linePrefix = editor.document
+        .lineAt(position.line)
+        .text.substring(0, position.character);
+
+      let stateName;
+      for (const regex of stateRegexPatterns) {
+        const match = linePrefix.match(regex!);
+        if (match) {
+          stateName = match[1];
+          break;
+        }
+      }
+
+      if (stateName) {
+        vscode.commands.executeCommand("editor.action.triggerSuggest");
+      }
+    }
   }
 }

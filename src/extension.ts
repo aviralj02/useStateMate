@@ -17,9 +17,18 @@ export function activate(context: vscode.ExtensionContext) {
       { scheme: "file", language: "typescriptreact" },
     ],
     new useStateCompletionProvider(),
-    "["
+    "[",
+    ",",
+    " "
   );
   context.subscriptions.push(provider);
+
+  const completionProviderInstance = new useStateCompletionProvider();
+
+  // For pressing backspaces
+  vscode.workspace.onDidChangeTextDocument((event) => {
+    completionProviderInstance.handleBackspaceEvent(event);
+  });
 }
 
 export function deactivate() {}
